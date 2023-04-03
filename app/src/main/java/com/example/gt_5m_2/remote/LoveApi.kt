@@ -1,6 +1,6 @@
-package com.example.gt_5m_2
+package com.example.gt_5m_2.remote
 
-import com.example.gt_5m_2.model.LoveModel
+import com.example.gt_5m_2.remote.model.LoveModel
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header

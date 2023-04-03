@@ -1,4 +1,4 @@
-package com.example.gt_5m_2.model
+package com.example.gt_5m_2.remote.model
 
 import android.os.Parcel
 import android.os.Parcelable
