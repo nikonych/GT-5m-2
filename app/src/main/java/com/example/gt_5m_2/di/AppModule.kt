@@ -3,6 +3,7 @@ package com.example.gt_5m_2.di
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.gt_5m_2.remote.LoveApi
+import com.example.gt_5m_2.room.AppDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,6 +26,11 @@ class AppModule {
     fun providePreferences(@ApplicationContext context: Context): SharedPreferences {
         return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
 
+    }
+
+    @Provides
+    fun provideAppDatabase(@ApplicationContext context: Context): AppDatabase {
+        return AppDatabase.getDataseClient(context)
     }
 
     companion object {

@@ -2,8 +2,13 @@ package com.example.gt_5m_2.remote.model
 
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
+@Entity(tableName = "love")
 data class LoveModel(
+    @PrimaryKey(autoGenerate = true)
+    var id: Int,
     var fname: String,
     var sname: String,
     var percentage: String,
@@ -11,6 +16,7 @@ data class LoveModel(
 
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
+        parcel.readInt(),
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),

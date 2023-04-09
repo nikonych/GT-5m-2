@@ -9,21 +9,31 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class LoveViewModel @Inject constructor(private val repository: Repository,
-val preferences: SharedPreferences) : ViewModel() {
+class LoveViewModel @Inject constructor(
+    private val repository: Repository,
+    private val preferences: SharedPreferences
+) : ViewModel() {
 
 
-    fun getLiveLoveModel(firstname:String, secondName:String): LiveData<LoveModel> {
+    fun getLiveLoveModel(firstname: String, secondName: String): LiveData<LoveModel> {
         return repository.getPercentage(firstname, secondName)
     }
 
-    fun isUserSeen() : Boolean{
+    fun isUserSeen(): Boolean {
         return preferences.getBoolean(USER_SEEN_KEY, false)
     }
 
     @SuppressLint("CommitPrefEdits")
     fun userSeen() {
         preferences.edit().putBoolean(USER_SEEN_KEY, true).apply()
+    }
+
+    fun insertLove(loveModel: LoveModel) {
+        repository.insertLove(loveModel)
+    }
+
+    fun getAllLove(): List<LoveModel> {
+        return repository.getAllLove()
     }
 
     companion object {

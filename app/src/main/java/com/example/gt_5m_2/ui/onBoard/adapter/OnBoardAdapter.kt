@@ -65,14 +65,13 @@ class OnBoardAdapter(private val onStartClick: () -> Unit) :
             binding.apply {
                 btnStart.isVisible = adapterPosition == 3
                 tvTitle.isVisible = adapterPosition != 3
-
                 btnStart.setOnClickListener {
                     onStartClick()
 
                 }
                 tvTitle.text = onBoard.title
                 tvDesc.text = onBoard.desc
-                onBoard.image?.let { imgBoard.setImageResource(it.toInt()) }
+                onBoard.image?.let { imgBoard.setImageResource(it) }
             }
         }
     }

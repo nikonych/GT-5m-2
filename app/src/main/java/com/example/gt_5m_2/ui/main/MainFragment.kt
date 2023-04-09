@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.gt_5m_2.App
 import com.example.gt_5m_2.LoveViewModel
 import com.example.gt_5m_2.MainActivity
 import com.example.gt_5m_2.R
@@ -44,6 +45,7 @@ class MainFragment : Fragment() {
                     .observe(viewLifecycleOwner) {
                         val bundle = Bundle()
                         bundle.putParcelable("RESULT", it)
+                        viewModel.insertLove(it)
                         findNavController().navigate(R.id.resultFragment, bundle)
                     }
             }

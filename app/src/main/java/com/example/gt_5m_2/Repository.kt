@@ -5,12 +5,16 @@ import androidx.lifecycle.MutableLiveData
 import com.example.gt_5m_2.remote.LoveApi
 import com.example.gt_5m_2.remote.LoveService
 import com.example.gt_5m_2.remote.model.LoveModel
+import com.example.gt_5m_2.room.AppDatabase
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
 
-class Repository @Inject constructor(private val api: LoveApi) {
+class Repository @Inject constructor(
+    private val api: LoveApi,
+    private val appDatabase: AppDatabase
+) {
 
     fun getPercentage(firstName: String, secondName: String): MutableLiveData<LoveModel> {
         val mutableLiveData = MutableLiveData<LoveModel>()
@@ -27,6 +31,14 @@ class Repository @Inject constructor(private val api: LoveApi) {
 
                 }
             })
-            return mutableLiveData
+        return mutableLiveData
+    }
+
+    fun insertLove(loveModel: LoveModel) {
+        appDatabase.loveDAO().insertLove(loveModel)
+    }
+
+    fun getAllLove(): List<LoveModel> {
+        return appDatabase.loveDAO().getAll()
     }
 }

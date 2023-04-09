@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="26dp"
+        android:layout_height="wrap_content">
+
+
+
+    <TextView
+            android:id="@+id/tv_first_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            app:layout_constraintEnd_toEndOf="@+id/heart" />
+
+    <ImageView
+            android:id="@+id/heart"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/heart"
+            app:layout_constraintTop_toBottomOf="@id/tv_first_name"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+            android:id="@+id/tv_second_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Me"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/heart"
+
+            app:layout_constraintEnd_toEndOf="@+id/heart" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textSize="50sp"
+            android:layout_marginStart="50dp"
+            app:layout_constraintStart_toEndOf="@id/heart"
+            app:layout_constraintBottom_toBottomOf="@+id/heart"
+            app:layout_constraintTop_toTopOf="@+id/heart"
+            android:id="@+id/textView" />
+
+    <FrameLayout
+
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/heard_border" />
+
+        <TextView
+                android:id="@+id/tv_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="24sp"
+                android:layout_marginBottom="10dp"
+                android:text="100%" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

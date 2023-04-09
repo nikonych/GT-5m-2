@@ -37,7 +37,7 @@ class OnBoardFragment  : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val onBoardAdapter = OnBoardAdapter {
             viewModel.userSeen()
-            findNavController().navigate(R.id.mainFragment)
+            findNavController().navigate(R.id.navigation_home)
         }
         binding.viewPager.adapter = onBoardAdapter
         binding.indicator.attachTo(binding.viewPager)
