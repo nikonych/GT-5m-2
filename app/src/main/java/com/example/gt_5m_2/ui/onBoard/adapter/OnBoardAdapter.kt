@@ -20,24 +20,24 @@ class OnBoardAdapter(private val onStartClick: () -> Unit) :
             "Have a good time\n",
             "You should take the time to help those\n" +
                     "who need you\n",
-            R.drawable.img_1
+            "https://assets2.lottiefiles.com/packages/lf20_ER8E6HKqBl.json"
         ),
         OnBoard(
             "Cherishing love\n",
             "It is now no longer possible for\n" +
                     "you to cherish love\n",
-            R.drawable.img_2
+            "https://assets2.lottiefiles.com/packages/lf20_HPjNu7p6iu.json"
         ),
         OnBoard(
             "Have a breakup?\n",
             "We have made the correction for you\n" +
                     "don't worry\n" +
                     "Maybe someone is waiting for you!\n",
-            R.drawable.img_3
+            "https://assets5.lottiefiles.com/packages/lf20_rycdh53q.json"
         ),
         OnBoard(
             desc="It's Funs and Many more\n",
-            image=R.drawable.img
+            image="https://assets6.lottiefiles.com/packages/lf20_f0i1nwjp.json"
         )
     )
 
@@ -71,7 +71,7 @@ class OnBoardAdapter(private val onStartClick: () -> Unit) :
                 }
                 tvTitle.text = onBoard.title
                 tvDesc.text = onBoard.desc
-                onBoard.image?.let { imgBoard.setImageResource(it) }
+                imgBoard.setAnimationFromUrl(onBoard.image);
             }
         }
     }
